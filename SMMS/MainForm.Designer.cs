@@ -46,6 +46,7 @@
             this.panelTitle = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.lblName = new System.Windows.Forms.Label();
             this.panelSlide.SuspendLayout();
             this.panelSubSetting.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -211,6 +212,7 @@
             // 
             // panelLogo
             // 
+            this.panelLogo.Controls.Add(this.lblName);
             this.panelLogo.Controls.Add(this.lblUsername);
             this.panelLogo.Controls.Add(this.pictureBox1);
             this.panelLogo.Controls.Add(this.lblRole);
@@ -233,7 +235,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(54, 14);
+            this.pictureBox1.Location = new System.Drawing.Point(54, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 75);
             this.pictureBox1.TabIndex = 0;
@@ -280,6 +282,17 @@
             this.panelMain.Size = new System.Drawing.Size(978, 604);
             this.panelMain.TabIndex = 2;
             // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(3, 86);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(37, 27);
+            this.lblName.TabIndex = 3;
+            this.lblName.Text = "Ln";
+            this.lblName.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
@@ -325,6 +338,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblName;
     }
 }
 

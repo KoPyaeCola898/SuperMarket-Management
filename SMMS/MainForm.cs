@@ -52,6 +52,21 @@ namespace SMMS
         }
         #endregion panelSlide
 
+        private Form activeForm = null;
+        public void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            lblTitle.Text = childForm.Text; // Set the title label to the child form's title
+            panelMain.Controls.Add(childForm);
+            panelMain.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             HideSubMenu();
@@ -64,6 +79,7 @@ namespace SMMS
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
+            openChildForm(new Category());
             HideSubMenu();
         }
 
