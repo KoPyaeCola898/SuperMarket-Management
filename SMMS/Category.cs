@@ -72,7 +72,7 @@ namespace SMMS
                 module.btnUpdate.Enabled = true;
                 module.ShowDialog();
             }
-            LoadCategory(); // Refresh the category list after update or delete
+            LoadCategory(); // Refresh the category list after update or delete 88
         }
     }
 }
