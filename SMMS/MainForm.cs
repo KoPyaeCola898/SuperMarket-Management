@@ -74,6 +74,7 @@ namespace SMMS
 
         private void btnProductList_Click(object sender, EventArgs e)
         {
+            openChildForm(new Product());
             HideSubMenu();
         }
 

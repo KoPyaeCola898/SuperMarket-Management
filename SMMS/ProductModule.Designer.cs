@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.picClose = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblid = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -73,6 +72,7 @@
             this.picClose.Size = new System.Drawing.Size(29, 26);
             this.picClose.TabIndex = 1;
             this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
             // 
             // label1
             // 
@@ -84,17 +84,6 @@
             this.label1.Size = new System.Drawing.Size(181, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Product Module";
-            // 
-            // lblid
-            // 
-            this.lblid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblid.AutoSize = true;
-            this.lblid.Location = new System.Drawing.Point(26, 364);
-            this.lblid.Name = "lblid";
-            this.lblid.Size = new System.Drawing.Size(31, 25);
-            this.lblid.TabIndex = 13;
-            this.lblid.Text = "id";
-            this.lblid.Visible = false;
             // 
             // btnCancel
             // 
@@ -109,6 +98,7 @@
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnUpdate
             // 
@@ -146,6 +136,7 @@
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtPCode
             // 
@@ -244,6 +235,7 @@
             this.UDReOrder.Name = "UDReOrder";
             this.UDReOrder.Size = new System.Drawing.Size(186, 34);
             this.UDReOrder.TabIndex = 23;
+            this.UDReOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.UDReOrder.Value = new decimal(new int[] {
             1,
             0,
@@ -266,7 +258,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblid);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label2);
@@ -274,7 +265,7 @@
             this.Controls.Add(this.txtPCode);
             this.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProductModule";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductModule";
@@ -293,7 +284,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox picClose;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Label lblid;
         public System.Windows.Forms.Button btnCancel;
         public System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label label2;
