@@ -30,7 +30,7 @@ namespace SMMS
             int i = 0;
             dgvProduct.Rows.Clear();
             cn.Open();
-            cmd = new SqlCommand("SELECT p.pcode, p.barcode, p.item, c.category, p.price, p.reorder FROM tbProduct AS p INNER JOIN tbCategory AS c on c.id = p.cid", cn);
+            cmd = new SqlCommand("SELECT p.pcode, p.barcode, p.item, c.category, p.price, p.reorder FROM tbProduct AS p INNER JOIN tbCategory AS c on c.id = p.cid WHERE CONCAT(p.item, c.category) LIKE '%" + txtSearch.Text + "%'", cn);
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -45,6 +45,11 @@ namespace SMMS
         {
             ProductModule productModule = new ProductModule(this);
             productModule.ShowDialog();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadProduct(); // Reload products when the search text changes
         }
     }
 }
