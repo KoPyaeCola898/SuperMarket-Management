@@ -19,7 +19,10 @@ namespace SMMS
 
         private void picClose_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            if (MessageBox.Show("Are you sure want to close the application?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit(); // Close the application if user confirms
+            }
         }
 
         public void slide(Button button)
@@ -67,6 +70,11 @@ namespace SMMS
         private void btnLogout_Click(object sender, EventArgs e)
         {
             slide(btnLogout); // Slide the panel to the Logout button
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblTimer.Text = DateTime.Now.ToString("hh:mm:ss tt"); // Update the timer label with the current time
         }
     }
 }
