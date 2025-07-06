@@ -49,9 +49,11 @@ namespace SMMS
                 cmd.Parameters.AddWithValue("@price", price);
                 cmd.Parameters.AddWithValue("@qty", int.Parse(txtQty.Text));
                 cmd.Parameters.AddWithValue("@sdate", DateTime.Now);
-                cmd.Parameters.AddWithValue("@cashier", cashier.lblUsername);
+                cmd.Parameters.AddWithValue("@cashier", cashier.lblUsername.Text);
                 cmd.ExecuteNonQuery();
                 cn.Close();
+                cashier.LoadCart(); // Refresh the cart in the Cashier form
+                this.Dispose(); // Close the Qty form
             }    
         }
     }

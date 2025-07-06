@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cashier));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnPass = new System.Windows.Forms.Button();
@@ -55,12 +55,8 @@
             this.lblName = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblTimer = new System.Windows.Forms.Label();
-            this.lblVatable = new System.Windows.Forms.Label();
-            this.lblTax = new System.Windows.Forms.Label();
             this.lblDiscount = new System.Windows.Forms.Label();
             this.lblSaleTotal = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtBarCode = new System.Windows.Forms.TextBox();
@@ -341,12 +337,8 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.lblTimer);
-            this.panel5.Controls.Add(this.lblVatable);
-            this.panel5.Controls.Add(this.lblTax);
             this.panel5.Controls.Add(this.lblDiscount);
             this.panel5.Controls.Add(this.lblSaleTotal);
-            this.panel5.Controls.Add(this.label10);
-            this.panel5.Controls.Add(this.label9);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.txtBarCode);
@@ -375,30 +367,10 @@
             this.lblTimer.Text = "00:00:00";
             this.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblVatable
-            // 
-            this.lblVatable.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVatable.Location = new System.Drawing.Point(141, 432);
-            this.lblVatable.Name = "lblVatable";
-            this.lblVatable.Size = new System.Drawing.Size(76, 25);
-            this.lblVatable.TabIndex = 14;
-            this.lblVatable.Text = "0.00";
-            this.lblVatable.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblTax
-            // 
-            this.lblTax.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTax.Location = new System.Drawing.Point(141, 393);
-            this.lblTax.Name = "lblTax";
-            this.lblTax.Size = new System.Drawing.Size(76, 25);
-            this.lblTax.TabIndex = 13;
-            this.lblTax.Text = "0.00";
-            this.lblTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // lblDiscount
             // 
             this.lblDiscount.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiscount.Location = new System.Drawing.Point(141, 355);
+            this.lblDiscount.Location = new System.Drawing.Point(144, 406);
             this.lblDiscount.Name = "lblDiscount";
             this.lblDiscount.Size = new System.Drawing.Size(76, 25);
             this.lblDiscount.TabIndex = 12;
@@ -408,38 +380,18 @@
             // lblSaleTotal
             // 
             this.lblSaleTotal.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaleTotal.Location = new System.Drawing.Point(141, 321);
+            this.lblSaleTotal.Location = new System.Drawing.Point(144, 369);
             this.lblSaleTotal.Name = "lblSaleTotal";
             this.lblSaleTotal.Size = new System.Drawing.Size(76, 25);
             this.lblSaleTotal.TabIndex = 11;
             this.lblSaleTotal.Text = "0.00";
             this.lblSaleTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(6, 432);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(120, 25);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Vatable : ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(6, 395);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 25);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Tax : ";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 358);
+            this.label8.Location = new System.Drawing.Point(6, 406);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(121, 25);
             this.label8.TabIndex = 8;
@@ -449,7 +401,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 321);
+            this.label6.Location = new System.Drawing.Point(6, 369);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(145, 25);
             this.label6.TabIndex = 7;
@@ -457,7 +409,7 @@
             // 
             // txtBarCode
             // 
-            this.txtBarCode.Location = new System.Drawing.Point(11, 246);
+            this.txtBarCode.Location = new System.Drawing.Point(11, 261);
             this.txtBarCode.Name = "txtBarCode";
             this.txtBarCode.Size = new System.Drawing.Size(163, 34);
             this.txtBarCode.TabIndex = 6;
@@ -466,7 +418,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(8, 215);
+            this.label7.Location = new System.Drawing.Point(8, 230);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(108, 25);
             this.label7.TabIndex = 5;
@@ -476,7 +428,7 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(8, 179);
+            this.lblDate.Location = new System.Drawing.Point(8, 194);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(84, 25);
             this.lblDate.TabIndex = 4;
@@ -486,7 +438,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(8, 143);
+            this.label5.Location = new System.Drawing.Point(8, 158);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 25);
             this.label5.TabIndex = 3;
@@ -496,7 +448,7 @@
             // 
             this.lblTransNo.AutoSize = true;
             this.lblTransNo.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransNo.Location = new System.Drawing.Point(6, 107);
+            this.lblTransNo.Location = new System.Drawing.Point(6, 122);
             this.lblTransNo.Name = "lblTransNo";
             this.lblTransNo.Size = new System.Drawing.Size(168, 25);
             this.lblTransNo.TabIndex = 2;
@@ -506,7 +458,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 71);
+            this.label2.Location = new System.Drawing.Point(6, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(173, 25);
             this.label2.TabIndex = 1;
@@ -530,14 +482,14 @@
             this.dgvCash.AllowUserToAddRows = false;
             this.dgvCash.BackgroundColor = System.Drawing.Color.White;
             this.dgvCash.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCash.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCash.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvCash.ColumnHeadersHeight = 30;
             this.dgvCash.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCash.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -597,8 +549,8 @@
             // Column6
             // 
             this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle22;
             this.Column6.HeaderText = "Price";
             this.Column6.MinimumWidth = 8;
             this.Column6.Name = "Column6";
@@ -607,8 +559,8 @@
             // Column3
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle23;
             this.Column3.HeaderText = "Qty";
             this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
@@ -617,8 +569,8 @@
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle24;
             this.Column5.HeaderText = "Discount";
             this.Column5.MinimumWidth = 8;
             this.Column5.Name = "Column5";
@@ -627,8 +579,8 @@
             // Column7
             // 
             this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle25;
             this.Column7.HeaderText = "Total";
             this.Column7.MinimumWidth = 8;
             this.Column7.Name = "Column7";
@@ -736,17 +688,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblTransNo;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblSaleTotal;
         private System.Windows.Forms.Label lblTimer;
-        private System.Windows.Forms.Label lblVatable;
-        private System.Windows.Forms.Label lblTax;
         private System.Windows.Forms.Label lblDiscount;
         private System.Windows.Forms.Timer timer1;
         public System.Windows.Forms.Label lblUsername;
+        public System.Windows.Forms.Label lblTransNo;
     }
 }

@@ -11,20 +11,18 @@ using System.Data.SqlClient;
 
 namespace SMMS
 {
-    public partial class LookUpProduct : Form
+    public partial class ProductStockIn : Form
     {
         SqlConnection cn = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
-        Cashier cashier;
 
-        public LookUpProduct(Cashier cash)
+        public ProductStockIn()
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
-            cashier = cash;
-            LoadProduct(); // Load products when the form is initialized
+            LoadProduct();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -37,12 +35,12 @@ namespace SMMS
             int i = 0;
             dgvProduct.Rows.Clear();
             cn.Open();
-            cmd = new SqlCommand("SELECT p.pcode, p.barcode, p.item, c.category, p.price, p.qty FROM tbProduct AS p INNER JOIN tbCategory AS c on c.id = p.cid WHERE CONCAT(p.item, c.category) LIKE '%" + txtSearch.Text + "%'", cn);
+            cmd = new SqlCommand("SELECT pcode, item, qty FROM tbProduct WHERE item LIKE '%" + txtSearch.Text + "%'", cn);
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 i++;
-                dgvProduct.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString());
+                dgvProduct.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString());
             }
             dr.Close();
             cn.Close();
@@ -53,9 +51,18 @@ namespace SMMS
             string colName = dgvProduct.Columns[e.ColumnIndex].Name;
             if (colName == "Select")
             {
-                Qty qty = new Qty(cashier);
-                qty.ProductDetails(dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString(), double.Parse(dgvProduct.Rows[e.RowIndex].Cells[5].Value.ToString()), cashier.lblTransNo.Text, int.Parse(dgvProduct.Rows[e.RowIndex].Cells[6].Value.ToString()));
-                qty.ShowDialog(); // Show the Qty form to enter quantity
+                if (MessageBox.Show("Add this item?", "Stock In", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        cn.Open();
+                        cmd = new SqlCommand("INSERT INTO tbStockIn (refno, pcode, sdate) VALUES (@refno, @pcode, @sdate)", cn);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error");
+                    }
+                }
             }
         }
     }

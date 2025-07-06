@@ -40,13 +40,14 @@
             this.btnProductList = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.lblName = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblRole = new System.Windows.Forms.Label();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.lblName = new System.Windows.Forms.Label();
+            this.btnInStock = new System.Windows.Forms.Button();
             this.panelSlide.SuspendLayout();
             this.panelSubSetting.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -61,6 +62,7 @@
             this.panelSlide.Controls.Add(this.panelSubSetting);
             this.panelSlide.Controls.Add(this.btnSetting);
             this.panelSlide.Controls.Add(this.btnSaleHistory);
+            this.panelSlide.Controls.Add(this.btnInStock);
             this.panelSlide.Controls.Add(this.btnCategory);
             this.panelSlide.Controls.Add(this.btnProductList);
             this.panelSlide.Controls.Add(this.btnDashboard);
@@ -93,7 +95,7 @@
             this.panelSubSetting.Controls.Add(this.btnStore);
             this.panelSubSetting.Controls.Add(this.btnUser);
             this.panelSubSetting.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubSetting.Location = new System.Drawing.Point(0, 395);
+            this.panelSubSetting.Location = new System.Drawing.Point(0, 440);
             this.panelSubSetting.Name = "panelSubSetting";
             this.panelSubSetting.Size = new System.Drawing.Size(200, 96);
             this.panelSubSetting.TabIndex = 0;
@@ -136,7 +138,7 @@
             this.btnSetting.FlatAppearance.BorderSize = 0;
             this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetting.ForeColor = System.Drawing.Color.White;
-            this.btnSetting.Location = new System.Drawing.Point(0, 350);
+            this.btnSetting.Location = new System.Drawing.Point(0, 395);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnSetting.Size = new System.Drawing.Size(200, 45);
@@ -152,7 +154,7 @@
             this.btnSaleHistory.FlatAppearance.BorderSize = 0;
             this.btnSaleHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaleHistory.ForeColor = System.Drawing.Color.White;
-            this.btnSaleHistory.Location = new System.Drawing.Point(0, 305);
+            this.btnSaleHistory.Location = new System.Drawing.Point(0, 350);
             this.btnSaleHistory.Name = "btnSaleHistory";
             this.btnSaleHistory.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnSaleHistory.Size = new System.Drawing.Size(200, 45);
@@ -222,6 +224,17 @@
             this.panelLogo.Size = new System.Drawing.Size(200, 170);
             this.panelLogo.TabIndex = 1;
             // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(3, 86);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(37, 27);
+            this.lblName.TabIndex = 3;
+            this.lblName.Text = "Ln";
+            this.lblName.Visible = false;
+            // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
@@ -282,16 +295,21 @@
             this.panelMain.Size = new System.Drawing.Size(978, 604);
             this.panelMain.TabIndex = 2;
             // 
-            // lblName
+            // btnInStock
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(3, 86);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(37, 27);
-            this.lblName.TabIndex = 3;
-            this.lblName.Text = "Ln";
-            this.lblName.Visible = false;
+            this.btnInStock.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInStock.FlatAppearance.BorderSize = 0;
+            this.btnInStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInStock.ForeColor = System.Drawing.Color.White;
+            this.btnInStock.Location = new System.Drawing.Point(0, 305);
+            this.btnInStock.Name = "btnInStock";
+            this.btnInStock.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnInStock.Size = new System.Drawing.Size(200, 45);
+            this.btnInStock.TabIndex = 7;
+            this.btnInStock.Text = "In Stock";
+            this.btnInStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInStock.UseVisualStyleBackColor = true;
+            this.btnInStock.Click += new System.EventHandler(this.btnInStock_Click);
             // 
             // MainForm
             // 
@@ -339,6 +357,7 @@
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Button btnInStock;
     }
 }
 

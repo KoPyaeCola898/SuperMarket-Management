@@ -109,6 +109,11 @@ namespace SMMS
         {
             HideSubMenu();
         }
-        //abcd//
+
+        private void btnInStock_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
     }
 }
