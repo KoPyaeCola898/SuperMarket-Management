@@ -29,10 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockIn));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.linProduct = new System.Windows.Forms.LinkLabel();
+            this.linGenerate = new System.Windows.Forms.LinkLabel();
+            this.dtStockIn = new System.Windows.Forms.DateTimePicker();
+            this.txtRefNo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.dgvStockIn = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,14 +48,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtRefNo = new System.Windows.Forms.TextBox();
-            this.dtStockIn = new System.Windows.Forms.DateTimePicker();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.lblId = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnEntry = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockIn)).BeginInit();
@@ -60,9 +59,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 444);
+            this.panel1.Location = new System.Drawing.Point(0, 460);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(978, 100);
+            this.panel1.Size = new System.Drawing.Size(978, 84);
             this.panel1.TabIndex = 5;
             // 
             // label1
@@ -72,7 +71,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(172, 82);
             this.label1.TabIndex = 0;
@@ -81,9 +80,8 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lblId);
-            this.panel2.Controls.Add(this.linkLabel2);
-            this.panel2.Controls.Add(this.linkLabel1);
+            this.panel2.Controls.Add(this.linProduct);
+            this.panel2.Controls.Add(this.linGenerate);
             this.panel2.Controls.Add(this.dtStockIn);
             this.panel2.Controls.Add(this.txtRefNo);
             this.panel2.Controls.Add(this.label3);
@@ -94,19 +92,75 @@
             this.panel2.Size = new System.Drawing.Size(978, 134);
             this.panel2.TabIndex = 6;
             // 
+            // linProduct
+            // 
+            this.linProduct.AutoSize = true;
+            this.linProduct.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linProduct.Location = new System.Drawing.Point(614, 83);
+            this.linProduct.Name = "linProduct";
+            this.linProduct.Size = new System.Drawing.Size(350, 25);
+            this.linProduct.TabIndex = 5;
+            this.linProduct.TabStop = true;
+            this.linProduct.Text = "[ Click Here to Browse Product ]";
+            this.linProduct.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linProduct_LinkClicked);
+            // 
+            // linGenerate
+            // 
+            this.linGenerate.AutoSize = true;
+            this.linGenerate.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linGenerate.Location = new System.Drawing.Point(450, 27);
+            this.linGenerate.Name = "linGenerate";
+            this.linGenerate.Size = new System.Drawing.Size(144, 25);
+            this.linGenerate.TabIndex = 4;
+            this.linGenerate.TabStop = true;
+            this.linGenerate.Text = "[ Generate ]";
+            this.linGenerate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linGenerate_LinkClicked);
+            // 
+            // dtStockIn
+            // 
+            this.dtStockIn.Location = new System.Drawing.Point(207, 76);
+            this.dtStockIn.Name = "dtStockIn";
+            this.dtStockIn.Size = new System.Drawing.Size(387, 34);
+            this.dtStockIn.TabIndex = 3;
+            // 
+            // txtRefNo
+            // 
+            this.txtRefNo.Location = new System.Drawing.Point(207, 24);
+            this.txtRefNo.Name = "txtRefNo";
+            this.txtRefNo.Size = new System.Drawing.Size(235, 34);
+            this.txtRefNo.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(28, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(172, 25);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Stock In Date : ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(28, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(170, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Reference No :";
+            // 
             // dgvStockIn
             // 
             this.dgvStockIn.AllowUserToAddRows = false;
             this.dgvStockIn.BackgroundColor = System.Drawing.Color.White;
             this.dgvStockIn.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStockIn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStockIn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvStockIn.ColumnHeadersHeight = 30;
             this.dgvStockIn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvStockIn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -191,83 +245,20 @@
             this.Delete.Name = "Delete";
             this.Delete.Width = 8;
             // 
-            // label2
+            // btnEntry
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Reference No :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(172, 25);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Stock In Date : ";
-            // 
-            // txtRefNo
-            // 
-            this.txtRefNo.Location = new System.Drawing.Point(207, 24);
-            this.txtRefNo.Name = "txtRefNo";
-            this.txtRefNo.Size = new System.Drawing.Size(235, 34);
-            this.txtRefNo.TabIndex = 2;
-            // 
-            // dtStockIn
-            // 
-            this.dtStockIn.Location = new System.Drawing.Point(207, 76);
-            this.dtStockIn.Name = "dtStockIn";
-            this.dtStockIn.Size = new System.Drawing.Size(387, 34);
-            this.dtStockIn.TabIndex = 3;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.linkLabel1.Location = new System.Drawing.Point(450, 27);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(144, 25);
-            this.linkLabel1.TabIndex = 4;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "[ Generate ]";
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.linkLabel2.Location = new System.Drawing.Point(614, 83);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(350, 25);
-            this.linkLabel2.TabIndex = 5;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "[ Click Here to Browse Product ]";
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(614, 33);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(61, 25);
-            this.lblId.TabIndex = 6;
-            this.lblId.Text = "lblID";
-            this.lblId.Visible = false;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(854, 384);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(110, 43);
-            this.btnSave.TabIndex = 10;
-            this.btnSave.Text = "Entry";
-            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnEntry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEntry.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnEntry.FlatAppearance.BorderSize = 0;
+            this.btnEntry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEntry.ForeColor = System.Drawing.Color.White;
+            this.btnEntry.Location = new System.Drawing.Point(854, 384);
+            this.btnEntry.Name = "btnEntry";
+            this.btnEntry.Size = new System.Drawing.Size(110, 43);
+            this.btnEntry.TabIndex = 10;
+            this.btnEntry.Text = "Entry";
+            this.btnEntry.UseVisualStyleBackColor = false;
+            this.btnEntry.Click += new System.EventHandler(this.btnEntry_Click);
             // 
             // StockIn
             // 
@@ -275,13 +266,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 544);
             this.ControlBox = false;
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnEntry);
             this.Controls.Add(this.dgvStockIn);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StockIn";
             this.Text = "STOCK ENTRY";
             this.panel1.ResumeLayout(false);
@@ -308,11 +299,10 @@
         private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.DateTimePicker dtStockIn;
-        private System.Windows.Forms.TextBox txtRefNo;
-        private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        public System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.LinkLabel linGenerate;
+        private System.Windows.Forms.LinkLabel linProduct;
+        public System.Windows.Forms.Button btnEntry;
+        public System.Windows.Forms.DateTimePicker dtStockIn;
+        public System.Windows.Forms.TextBox txtRefNo;
     }
 }

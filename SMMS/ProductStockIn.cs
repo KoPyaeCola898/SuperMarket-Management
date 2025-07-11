@@ -17,11 +17,13 @@ namespace SMMS
         SqlCommand cmd = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
+        StockIn stockIn;
 
-        public ProductStockIn()
+        public ProductStockIn(StockIn stk)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
+            stockIn = stk;
             LoadProduct();
         }
 
@@ -57,6 +59,12 @@ namespace SMMS
                     {
                         cn.Open();
                         cmd = new SqlCommand("INSERT INTO tbStockIn (refno, pcode, sdate) VALUES (@refno, @pcode, @sdate)", cn);
+                        cmd.Parameters.AddWithValue("@refno", stockIn.txtRefNo.Text);
+                        cmd.Parameters.AddWithValue("@pcode", dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString());
+                        cmd.Parameters.AddWithValue("@sdate", stockIn.dtStockIn.Value);
+                        cmd.ExecuteNonQuery();
+                        cn.Close();
+                        stockIn.LoadStockIn();
                     }
                     catch (Exception ex)
                     {
@@ -64,6 +72,11 @@ namespace SMMS
                     }
                 }
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadProduct();
         }
     }
 }
