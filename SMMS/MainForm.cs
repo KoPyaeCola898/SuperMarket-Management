@@ -112,6 +112,7 @@ namespace SMMS
 
         private void btnInStock_Click(object sender, EventArgs e)
         {
+            openChildForm(new StockIn());
             HideSubMenu();
         }
 

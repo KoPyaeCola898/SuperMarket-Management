@@ -75,10 +75,10 @@ namespace SMMS
                             cmd.ExecuteNonQuery();
                             cn.Close();
 
-                            // update stock in quantity
+                            // update stockin quantity
                             cn.Open();
-                            cmd = new SqlCommand("UPDATE tbProduct SET qty = qty + " + int.Parse(dgvStockIn.Rows[i].Cells[5].Value.ToString()) + "WHERE id LIKE '" + dgvStockIn.Rows[i].Cells[1].Value.ToString() + "'", cn); // Update stock in quantity
-                            cmd.ExecuteNonQuery(); cn.Close();
+                            cmd = new SqlCommand("UPDATE tbStockIn SET qty = qty + " + int.Parse(dgvStockIn.Rows[i].Cells[5].Value.ToString()) + "WHERE id LIKE '" + dgvStockIn.Rows[i].Cells[1].Value.ToString() + "'", cn); // Update stock in quantity
+                            cmd.ExecuteNonQuery();
                             cn.Close();
                         }
                         Clear();
@@ -88,14 +88,38 @@ namespace SMMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+}
 
         public void Clear()
         {
             txtRefNo.Clear();
             dtStockIn.Value = DateTime.Now;
+        }
+
+        private void dgvStockIn_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvStockIn.Columns[e.ColumnIndex].Name;
+            if (colName == "Delete")
+            {
+                if (MessageBox.Show("Are you sure you want to delete this record?", "Delete Stock In", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        cn.Open();
+                        cmd = new SqlCommand("DELETE FROM tbStockIn WHERE id='" + dgvStockIn.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", cn);
+                        cmd.ExecuteNonQuery();
+                        cn.Close();
+                        MessageBox.Show("Record deleted successfully.", "Delete Stock In", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadStockIn();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }

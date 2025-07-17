@@ -118,7 +118,7 @@
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 463);
+            this.panel1.Location = new System.Drawing.Point(0, 444);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(978, 100);
             this.panel1.TabIndex = 2;
@@ -155,7 +155,7 @@
             this.dgvProduct.RowHeadersVisible = false;
             this.dgvProduct.RowHeadersWidth = 62;
             this.dgvProduct.RowTemplate.Height = 28;
-            this.dgvProduct.Size = new System.Drawing.Size(978, 463);
+            this.dgvProduct.Size = new System.Drawing.Size(978, 444);
             this.dgvProduct.TabIndex = 3;
             // 
             // Column1
@@ -236,7 +236,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(978, 563);
+            this.ClientSize = new System.Drawing.Size(978, 544);
             this.ControlBox = false;
             this.Controls.Add(this.dgvProduct);
             this.Controls.Add(this.panel1);

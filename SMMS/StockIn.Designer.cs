@@ -59,9 +59,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 460);
+            this.panel1.Location = new System.Drawing.Point(0, 444);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(978, 84);
+            this.panel1.Size = new System.Drawing.Size(978, 100);
             this.panel1.TabIndex = 5;
             // 
             // label1
@@ -71,9 +71,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(12, 1);
+            this.label1.Location = new System.Drawing.Point(12, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 82);
+            this.label1.Size = new System.Drawing.Size(167, 82);
             this.label1.TabIndex = 0;
             this.label1.Text = "Stock In Module";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -179,8 +179,9 @@
             this.dgvStockIn.RowHeadersVisible = false;
             this.dgvStockIn.RowHeadersWidth = 62;
             this.dgvStockIn.RowTemplate.Height = 28;
-            this.dgvStockIn.Size = new System.Drawing.Size(978, 230);
+            this.dgvStockIn.Size = new System.Drawing.Size(978, 244);
             this.dgvStockIn.TabIndex = 7;
+            this.dgvStockIn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStockIn_CellContentClick);
             // 
             // Column1
             // 
@@ -252,7 +253,7 @@
             this.btnEntry.FlatAppearance.BorderSize = 0;
             this.btnEntry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntry.ForeColor = System.Drawing.Color.White;
-            this.btnEntry.Location = new System.Drawing.Point(854, 384);
+            this.btnEntry.Location = new System.Drawing.Point(850, 384);
             this.btnEntry.Name = "btnEntry";
             this.btnEntry.Size = new System.Drawing.Size(110, 43);
             this.btnEntry.TabIndex = 10;

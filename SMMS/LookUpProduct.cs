@@ -58,5 +58,18 @@ namespace SMMS
                 qty.ShowDialog(); // Show the Qty form to enter quantity
             }
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadProduct(); // Reload products when the search text changes
+        }
+
+        private void LookUpProduct_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Dispose(); // Close the form when Escape key is pressed
+            }
+        }
     }
 }
