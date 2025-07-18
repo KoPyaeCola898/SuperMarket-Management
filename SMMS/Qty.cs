@@ -79,7 +79,6 @@ namespace SMMS
                         cashier.LoadCart();
                         this.Dispose();
                     }
-
                     else
                     {
                         if (qty < (int.Parse(txtQty.Text) + cart_qty))
@@ -87,13 +86,12 @@ namespace SMMS
                             MessageBox.Show("Unable to proceed. Remaining qty on hand is " + qty, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
-
                         cn.Open();
                         cmd = new SqlCommand("INSERT INTO tbCart(transno, pcode, price, qty, sdate, cashier)VALUES(@transno, @pcode, @price, @qty, @sdate, @cashier)", cn);
                         cmd.Parameters.AddWithValue("@transno", transno);
                         cmd.Parameters.AddWithValue("@pcode", pcode);
                         cmd.Parameters.AddWithValue("@price", price);
-                        cmd.Parameters.AddWithValue("@qty", qty);
+                        cmd.Parameters.AddWithValue("@qty", int.Parse(txtQty.Text));
                         cmd.Parameters.AddWithValue("@sdate", DateTime.Now);
                         cmd.Parameters.AddWithValue("@cashier", cashier.lblUsername.Text);
                         cmd.ExecuteNonQuery();

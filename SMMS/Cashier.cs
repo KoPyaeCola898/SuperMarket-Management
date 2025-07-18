@@ -235,18 +235,14 @@ namespace SMMS
                         MessageBox.Show("Unable to proceed. Remaining qty on hand is " + qty, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-           
-                        cn.Open();
-                        cmd = new SqlCommand("Update tbCart set qty = (qty + " + _qty + ")Where id = '" + id + "'", cn);
-                        cmd.ExecuteReader();
-                        cn.Close();
-                        txtBarCode.SelectionStart = 0;
-                        txtBarCode.SelectionLength = txtBarCode.Text.Length;
-                        LoadCart();
-                    
-
+                    cn.Open();
+                    cmd = new SqlCommand("Update tbCart set qty = (qty + " + _qty + ")Where id = '" + id + "'", cn);
+                    cmd.ExecuteReader();
+                    cn.Close();
+                    txtBarCode.SelectionStart = 0;
+                    txtBarCode.SelectionLength = txtBarCode.Text.Length;
+                    LoadCart();
                 }
-
                 else
                 {
                     if (qty < (int.Parse(txtQty.Text) + cart_qty))
@@ -254,7 +250,6 @@ namespace SMMS
                         MessageBox.Show("Unable to proceed. Remaining qty on hand is " + qty, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-
                     cn.Open();
                     cmd = new SqlCommand("INSERT INTO tbCart(transno, pcode, price, qty, sdate, cashier)VALUES(@transno, @pcode, @price, @qty, @sdate, @cashier)", cn);
                     cmd.Parameters.AddWithValue("@transno", lblTransNo.Text);

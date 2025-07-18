@@ -92,5 +92,20 @@ namespace SMMS
         {
             Clear();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            //if (MessageBox.Show("Are you sure want to update this category?", "Update Category", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //{
+            //    cn.Open();
+            //    cmd = new SqlCommand("UPDATE tbCategory SET category = @category WHERE id LIKE'" + lblid.Text + "'", cn);
+            //    cmd.Parameters.AddWithValue("@category", txtCategory.Text);
+            //    cmd.ExecuteNonQuery();
+            //    cn.Close();
+            //    MessageBox.Show("Record has been successfully updated.", "SuperMarket Management");
+            //    Clear();
+            //    this.Dispose(); // Close the module form after update
+            //}
+        }
     }
 }
