@@ -54,6 +54,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.txtQty = new System.Windows.Forms.TextBox();
             this.lblTimer = new System.Windows.Forms.Label();
             this.lblDiscount = new System.Windows.Forms.Label();
             this.lblSaleTotal = new System.Windows.Forms.Label();
@@ -79,7 +80,6 @@
             this.ColReduce = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.txtQty = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -356,6 +356,15 @@
             this.panel5.Size = new System.Drawing.Size(220, 611);
             this.panel5.TabIndex = 3;
             // 
+            // txtQty
+            // 
+            this.txtQty.Location = new System.Drawing.Point(171, 261);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(37, 25);
+            this.txtQty.TabIndex = 16;
+            this.txtQty.Text = "1";
+            this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // lblTimer
             // 
             this.lblTimer.BackColor = System.Drawing.Color.LightSeaGreen;
@@ -621,15 +630,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // txtQty
-            // 
-            this.txtQty.Location = new System.Drawing.Point(171, 261);
-            this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(37, 25);
-            this.txtQty.TabIndex = 16;
-            this.txtQty.Text = "1";
-            this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // Cashier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -697,7 +697,6 @@
         private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblDisplayTotal;
-        private System.Windows.Forms.TextBox txtBarCode;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label label5;
@@ -710,5 +709,6 @@
         public System.Windows.Forms.Label lblUsername;
         public System.Windows.Forms.Label lblTransNo;
         private System.Windows.Forms.TextBox txtQty;
+        public System.Windows.Forms.TextBox txtBarCode;
     }
 }

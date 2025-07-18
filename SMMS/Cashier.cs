@@ -94,26 +94,33 @@ namespace SMMS
 
         public void LoadCart()
         {
-            int i = 0;
-            double total = 0;
-            double discount = 0;
-            dgvCash.Rows.Clear(); // Clear the DataGridView before loading new data
-            cn.Open();
-            cmd = new SqlCommand("SELECT c.id, c.pcode, p.item, c.price, c.qty, c.disc, c.total FROM tbCart AS c INNER JOIN tbProduct AS p ON c.pcode = p.pcode WHERE c.transno LIKE @transno and c.status LIKE 'Pending'", cn);
-            cmd.Parameters.AddWithValue("@transno", lblTransNo.Text);
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
+            try
             {
-                i++;
-                total += Convert.ToDouble(dr["total"].ToString());
-                discount += Convert.ToDouble(dr["disc"].ToString());
-                dgvCash.Rows.Add(i, dr["id"].ToString(), dr["pcode"].ToString(), dr["item"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), double.Parse(dr["total"].ToString()).ToString("#,##0.00")); // Add rows to the DataGridView with formatted total
+                int i = 0;
+                double total = 0;
+                double discount = 0;
+                dgvCash.Rows.Clear(); // Clear the DataGridView before loading new data
+                cn.Open();
+                cmd = new SqlCommand("SELECT c.id, c.pcode, p.item, c.price, c.qty, c.disc, c.total FROM tbCart AS c INNER JOIN tbProduct AS p ON c.pcode = p.pcode WHERE c.transno LIKE @transno and c.status LIKE 'Pending'", cn);
+                cmd.Parameters.AddWithValue("@transno", lblTransNo.Text);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    i++;
+                    total += Convert.ToDouble(dr["total"].ToString());
+                    discount += Convert.ToDouble(dr["disc"].ToString());
+                    dgvCash.Rows.Add(i, dr["id"].ToString(), dr["pcode"].ToString(), dr["item"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), double.Parse(dr["total"].ToString()).ToString("#,##0.00")); // Add rows to the DataGridView with formatted total
+                }
+                dr.Close();
+                cn.Close();
+                lblSaleTotal.Text = total.ToString("#,##0.00");
+                lblDiscount.Text = discount.ToString("#,##0.00");
+                GetCartTotal(); // Calculate and display the total after discount
             }
-            dr.Close();
-            cn.Close();
-            lblSaleTotal.Text = total.ToString("#,##0.00");
-            lblDiscount.Text = discount.ToString("#,##0.00");
-            GetCartTotal(); // Calculate and display the total after discount
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
 
         public void GetCartTotal()
@@ -181,10 +188,11 @@ namespace SMMS
                         _pcode = dr["pcode"].ToString();
                         _price = double.Parse(dr["price"].ToString());
                         _qty = int.Parse(txtQty.Text);
-                        AddToCart(_pcode, _price, _qty);
                         dr.Close();
                         cn.Close();
                         //insert to tbCart
+                        AddToCart(_pcode, _price, _qty);
+
                     }
                     dr.Close();
                     cn.Close();
@@ -193,7 +201,7 @@ namespace SMMS
             catch (Exception ex)
             {
                 cn.Close();
-                MessageBox.Show(ex.Message, "stitle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -227,13 +235,15 @@ namespace SMMS
                         MessageBox.Show("Unable to proceed. Remaining qty on hand is " + qty, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                    cn.Open();
-                    cmd = new SqlCommand("Update tbCart set qty = (qty + " + _qty + ")Where id = '" + id + "'", cn);
-                    cmd.ExecuteReader();
-                    cn.Close();
-                    txtBarCode.SelectionStart = 0;
-                    txtBarCode.SelectionLength = txtBarCode.Text.Length;
-                    LoadCart();
+           
+                        cn.Open();
+                        cmd = new SqlCommand("Update tbCart set qty = (qty + " + _qty + ")Where id = '" + id + "'", cn);
+                        cmd.ExecuteReader();
+                        cn.Close();
+                        txtBarCode.SelectionStart = 0;
+                        txtBarCode.SelectionLength = txtBarCode.Text.Length;
+                        LoadCart();
+                    
 
                 }
 
@@ -260,7 +270,7 @@ namespace SMMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error");
             }
         }
     }

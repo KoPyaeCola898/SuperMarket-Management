@@ -42,18 +42,72 @@ namespace SMMS
         {
             if ((e.KeyChar == 13) && (txtQty.Text != string.Empty))
             {
-                cn.Open();
-                cmd = new SqlCommand("INSERT INTO tbCart (transno, pcode, price, qty, sdate, cashier) VALUES (@transno, @pcode, @price, @qty, @sdate, @cashier)", cn);
-                cmd.Parameters.AddWithValue("@transno", transno);
-                cmd.Parameters.AddWithValue("@pcode", pcode);
-                cmd.Parameters.AddWithValue("@price", price);
-                cmd.Parameters.AddWithValue("@qty", int.Parse(txtQty.Text));
-                cmd.Parameters.AddWithValue("@sdate", DateTime.Now);
-                cmd.Parameters.AddWithValue("@cashier", cashier.lblUsername.Text);
-                cmd.ExecuteNonQuery();
-                cn.Close();
-                cashier.LoadCart(); // Refresh the cart in the Cashier form
-                this.Dispose(); // Close the Qty form
+                try
+                {
+                    string id = "";
+                    int cart_qty = 0;
+                    bool found = false;
+                    cn.Open();
+                    cmd = new SqlCommand("SELECT * from tbCart Where transno = @transno and pcode = @pcode", cn);
+                    cmd.Parameters.AddWithValue("@transno", transno);
+                    cmd.Parameters.AddWithValue("@pcode", pcode);
+                    dr = cmd.ExecuteReader();
+                    dr.Read();
+                    if (dr.HasRows)
+                    {
+                        id = dr["id"].ToString();
+                        cart_qty = int.Parse(dr["qty"].ToString());
+                        found = true;
+                    }
+                    else found = false;
+                    dr.Close();
+                    cn.Close();
+
+                    if (found)
+                    {
+                        if (qty < (int.Parse(txtQty.Text) + cart_qty))
+                        {
+                            MessageBox.Show("Unable to proceed. Remaining qty on hand is " + qty, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        cn.Open();
+                        cmd = new SqlCommand("Update tbCart set qty = (qty + " + int.Parse(txtQty.Text) + ")Where id = '" + id + "'", cn);
+                        cmd.ExecuteReader();
+                        cn.Close();
+                        cashier.txtBarCode.Clear();
+                        cashier.txtBarCode.Focus();
+                        cashier.LoadCart();
+                        this.Dispose();
+                    }
+
+                    else
+                    {
+                        if (qty < (int.Parse(txtQty.Text) + cart_qty))
+                        {
+                            MessageBox.Show("Unable to proceed. Remaining qty on hand is " + qty, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+
+                        cn.Open();
+                        cmd = new SqlCommand("INSERT INTO tbCart(transno, pcode, price, qty, sdate, cashier)VALUES(@transno, @pcode, @price, @qty, @sdate, @cashier)", cn);
+                        cmd.Parameters.AddWithValue("@transno", transno);
+                        cmd.Parameters.AddWithValue("@pcode", pcode);
+                        cmd.Parameters.AddWithValue("@price", price);
+                        cmd.Parameters.AddWithValue("@qty", qty);
+                        cmd.Parameters.AddWithValue("@sdate", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@cashier", cashier.lblUsername.Text);
+                        cmd.ExecuteNonQuery();
+                        cn.Close();
+                        cashier.txtBarCode.Clear();
+                        cashier.txtBarCode.Focus();
+                        cashier.LoadCart();
+                        this.Dispose();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
             }    
         }
     }
