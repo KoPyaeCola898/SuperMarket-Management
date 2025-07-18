@@ -1,10 +1,13 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +20,10 @@ namespace SMMS
         SqlCommand cmd = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
+
+        int qty;
+        string id;
+        string price;
 
         public Cashier()
         {
@@ -151,7 +158,110 @@ namespace SMMS
             {
                 cn.Close(); // Ensure the connection is closed in case of an error
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }           
+            }
+        }
+
+        private void txtBarCode_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtBarCode.Text == string.Empty) return;
+                else
+                {
+                    string _pcode;
+                    double _price;
+                    int _qty;
+                    cn.Open();
+                    cmd = new SqlCommand("SELECT * FROM tbProduct WHERE barcode LIKE '" + txtBarCode.Text + "'", cn);
+                    dr = cmd.ExecuteReader();
+                    dr.Read();
+                    if (dr.HasRows)
+                    {
+                        qty = int.Parse(dr["qty"].ToString());
+                        _pcode = dr["pcode"].ToString();
+                        _price = double.Parse(dr["price"].ToString());
+                        _qty = int.Parse(txtQty.Text);
+                        AddToCart(_pcode, _price, _qty);
+                        dr.Close();
+                        cn.Close();
+                        //insert to tbCart
+                    }
+                    dr.Close();
+                    cn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                cn.Close();
+                MessageBox.Show(ex.Message, "stitle", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        public void AddToCart(string _pcode, double _price,int _qty)
+        {
+            try
+            {
+                string id = "";
+                int cart_qty = 0;
+                bool found = false;
+                cn.Open();
+                cmd = new SqlCommand("SELECT * from tbCart Where transno = @transno and pcode = @pcode", cn);
+                cmd.Parameters.AddWithValue("@transno", lblTransNo.Text);
+                cmd.Parameters.AddWithValue("@pcode", _pcode);
+                dr = cmd.ExecuteReader();
+                dr.Read();
+                if (dr.HasRows)
+                {
+                    id = dr["id"].ToString();
+                    cart_qty = int.Parse(dr["qty"].ToString());
+                    found = true;
+                }
+                else found = false;
+                dr.Close();
+                cn.Close();
+
+                if (found)
+                {
+                    if (qty < (int.Parse(txtQty.Text) + cart_qty))
+                    {
+                        MessageBox.Show("Unable to proceed. Remaining qty on hand is " + qty, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    cn.Open();
+                    cmd = new SqlCommand("Update tbCart set qty = (qty + " + _qty + ")Where id = '" + id + "'", cn);
+                    cmd.ExecuteReader();
+                    cn.Close();
+                    txtBarCode.SelectionStart = 0;
+                    txtBarCode.SelectionLength = txtBarCode.Text.Length;
+                    LoadCart();
+
+                }
+
+                else
+                {
+                    if (qty < (int.Parse(txtQty.Text) + cart_qty))
+                    {
+                        MessageBox.Show("Unable to proceed. Remaining qty on hand is " + qty, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    cn.Open();
+                    cmd = new SqlCommand("INSERT INTO tbCart(transno, pcode, price, qty, sdate, cashier)VALUES(@transno, @pcode, @price, @qty, @sdate, @cashier)", cn);
+                    cmd.Parameters.AddWithValue("@transno", lblTransNo.Text);
+                    cmd.Parameters.AddWithValue("@pcode", _pcode);
+                    cmd.Parameters.AddWithValue("@price", _price);
+                    cmd.Parameters.AddWithValue("@qty", _qty);
+                    cmd.Parameters.AddWithValue("@sdate", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@cashier", lblUsername.Text);
+                    cmd.ExecuteNonQuery();
+                    cn.Close();
+                    LoadCart();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
