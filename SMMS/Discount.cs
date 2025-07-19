@@ -16,5 +16,10 @@ namespace SMMS
         {
             InitializeComponent();
         }
+
+        private void Discount_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
