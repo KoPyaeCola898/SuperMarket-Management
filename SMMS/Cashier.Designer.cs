@@ -525,6 +525,7 @@
             this.dgvCash.RowTemplate.Height = 28;
             this.dgvCash.Size = new System.Drawing.Size(720, 611);
             this.dgvCash.TabIndex = 4;
+            this.dgvCash.SelectionChanged += new System.EventHandler(this.dgvCash_SelectionChanged);
             // 
             // Column1
             // 

@@ -64,6 +64,10 @@ namespace SMMS
         private void btnDiscount_Click(object sender, EventArgs e)
         {
             slide(btnDiscount); // Slide the panel to the Discount button
+            Discount discount = new Discount(this);
+            discount.lblId.Text = id;
+            discount.txtTotalPrice.Text = price;
+            discount.ShowDialog();
         }
 
         private void btnSettle_Click(object sender, EventArgs e)
@@ -267,6 +271,13 @@ namespace SMMS
             {
                 MessageBox.Show(ex.Message, "Error");
             }
+        }
+
+        private void dgvCash_SelectionChanged(object sender, EventArgs e)
+        {
+            int i = dgvCash.CurrentRow.Index;
+            id = dgvCash[1, i].Value.ToString();
+            price = dgvCash[7, i].Value.ToString();
         }
     }
 }

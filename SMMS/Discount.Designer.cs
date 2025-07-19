@@ -64,6 +64,7 @@
             this.picClose.Size = new System.Drawing.Size(29, 26);
             this.picClose.TabIndex = 1;
             this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
             // 
             // label1
             // 
@@ -116,6 +117,7 @@
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(457, 25);
             this.txtDiscount.TabIndex = 13;
+            this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             // 
             // txtDiscAmount
             // 
@@ -147,6 +149,7 @@
             this.btnSave.TabIndex = 16;
             this.btnSave.Text = "Confirm";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Discount
             // 
@@ -170,6 +173,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DISCOUNT";
             this.Load += new System.EventHandler(this.Discount_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Discount_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
@@ -186,10 +190,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtTotalPrice;
-        private System.Windows.Forms.TextBox txtDiscount;
-        private System.Windows.Forms.TextBox txtDiscAmount;
-        private System.Windows.Forms.Label lblId;
         public System.Windows.Forms.Button btnSave;
+        public System.Windows.Forms.TextBox txtTotalPrice;
+        public System.Windows.Forms.TextBox txtDiscount;
+        public System.Windows.Forms.TextBox txtDiscAmount;
+        public System.Windows.Forms.Label lblId;
     }
 }
