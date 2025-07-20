@@ -73,7 +73,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 18);
+            this.label1.Size = new System.Drawing.Size(103, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Discount";
             // 
@@ -82,7 +82,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(8, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 20);
+            this.label2.Size = new System.Drawing.Size(142, 25);
             this.label2.TabIndex = 9;
             this.label2.Text = "Total Price : ";
             // 
@@ -91,7 +91,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(8, 107);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 20);
+            this.label3.Size = new System.Drawing.Size(161, 25);
             this.label3.TabIndex = 10;
             this.label3.Text = "Discount (%) : ";
             // 
@@ -100,30 +100,32 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(8, 148);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 20);
+            this.label4.Size = new System.Drawing.Size(214, 25);
             this.label4.TabIndex = 11;
             this.label4.Text = "Discount Amount : ";
             // 
             // txtTotalPrice
             // 
+            this.txtTotalPrice.Enabled = false;
             this.txtTotalPrice.Location = new System.Drawing.Point(174, 61);
             this.txtTotalPrice.Name = "txtTotalPrice";
-            this.txtTotalPrice.Size = new System.Drawing.Size(457, 25);
+            this.txtTotalPrice.Size = new System.Drawing.Size(457, 34);
             this.txtTotalPrice.TabIndex = 12;
             // 
             // txtDiscount
             // 
             this.txtDiscount.Location = new System.Drawing.Point(174, 102);
             this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(457, 25);
+            this.txtDiscount.Size = new System.Drawing.Size(457, 34);
             this.txtDiscount.TabIndex = 13;
             this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             // 
             // txtDiscAmount
             // 
+            this.txtDiscAmount.Enabled = false;
             this.txtDiscAmount.Location = new System.Drawing.Point(174, 143);
             this.txtDiscAmount.Name = "txtDiscAmount";
-            this.txtDiscAmount.Size = new System.Drawing.Size(457, 25);
+            this.txtDiscAmount.Size = new System.Drawing.Size(457, 34);
             this.txtDiscAmount.TabIndex = 14;
             // 
             // lblId
@@ -131,7 +133,7 @@
             this.lblId.AutoSize = true;
             this.lblId.Location = new System.Drawing.Point(16, 188);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(22, 20);
+            this.lblId.Size = new System.Drawing.Size(31, 25);
             this.lblId.TabIndex = 15;
             this.lblId.Text = "id";
             this.lblId.Visible = false;
@@ -153,7 +155,7 @@
             // 
             // Discount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(639, 227);

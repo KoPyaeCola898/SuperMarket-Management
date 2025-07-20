@@ -23,6 +23,7 @@ namespace SMMS
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             cashier = cash;
+            txtDiscount.Focus();
         }
 
         private void Discount_Load(object sender, EventArgs e)
@@ -60,13 +61,13 @@ namespace SMMS
         {
             try
             {
-                if (MessageBox.Show("Add discount? Click yes to confirm", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Add discount? Click yes to confirm", "Discount", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Open();
-                    cmd = new SqlCommand("UPDATE tbCart SET disc = @disc, disc_percent = @disc_percent WHERE id = @id", cn);
-                    cmd.Parameters.AddWithValue("@disc", double.Parse(txtDiscAmount.Text));
-                    cmd.Parameters.AddWithValue("@disc_percent", double.Parse(txtDiscAmount.Text));
+                    cmd = new SqlCommand("UPDATE tbCart SET disc_percent = @disc_percent WHERE id = @id", cn);
+                    cmd.Parameters.AddWithValue("@disc_percent", double.Parse(txtDiscount.Text));
                     cmd.Parameters.AddWithValue("@id", int.Parse(lblId.Text));
+                    cmd.ExecuteNonQuery();
                     cn.Close();
                     cashier.LoadCart();
                     this.Dispose();
