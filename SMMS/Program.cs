@@ -16,7 +16,7 @@ namespace SMMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Settle());
+            Application.Run(new Cashier());
         }
     }
 }

@@ -77,7 +77,7 @@
             // 
             this.btnSeven.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
             this.btnSeven.ForeColor = System.Drawing.Color.White;
-            this.btnSeven.Location = new System.Drawing.Point(12, 120);
+            this.btnSeven.Location = new System.Drawing.Point(12, 122);
             this.btnSeven.Name = "btnSeven";
             this.btnSeven.Size = new System.Drawing.Size(50, 50);
             this.btnSeven.TabIndex = 3;
@@ -89,7 +89,7 @@
             // 
             this.btnEight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
             this.btnEight.ForeColor = System.Drawing.Color.White;
-            this.btnEight.Location = new System.Drawing.Point(67, 120);
+            this.btnEight.Location = new System.Drawing.Point(67, 122);
             this.btnEight.Name = "btnEight";
             this.btnEight.Size = new System.Drawing.Size(50, 50);
             this.btnEight.TabIndex = 4;
@@ -101,7 +101,7 @@
             // 
             this.btnNine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
             this.btnNine.ForeColor = System.Drawing.Color.White;
-            this.btnNine.Location = new System.Drawing.Point(122, 120);
+            this.btnNine.Location = new System.Drawing.Point(122, 122);
             this.btnNine.Name = "btnNine";
             this.btnNine.Size = new System.Drawing.Size(50, 50);
             this.btnNine.TabIndex = 5;
@@ -113,7 +113,7 @@
             // 
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(177, 120);
+            this.btnClear.Location = new System.Drawing.Point(177, 122);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(50, 50);
             this.btnClear.TabIndex = 6;
@@ -125,7 +125,7 @@
             // 
             this.btnZero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
             this.btnZero.ForeColor = System.Drawing.Color.White;
-            this.btnZero.Location = new System.Drawing.Point(177, 176);
+            this.btnZero.Location = new System.Drawing.Point(177, 178);
             this.btnZero.Name = "btnZero";
             this.btnZero.Size = new System.Drawing.Size(50, 50);
             this.btnZero.TabIndex = 10;
@@ -137,7 +137,7 @@
             // 
             this.btnSix.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
             this.btnSix.ForeColor = System.Drawing.Color.White;
-            this.btnSix.Location = new System.Drawing.Point(122, 176);
+            this.btnSix.Location = new System.Drawing.Point(122, 178);
             this.btnSix.Name = "btnSix";
             this.btnSix.Size = new System.Drawing.Size(50, 50);
             this.btnSix.TabIndex = 9;
@@ -149,7 +149,7 @@
             // 
             this.btnFive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
             this.btnFive.ForeColor = System.Drawing.Color.White;
-            this.btnFive.Location = new System.Drawing.Point(67, 176);
+            this.btnFive.Location = new System.Drawing.Point(67, 178);
             this.btnFive.Name = "btnFive";
             this.btnFive.Size = new System.Drawing.Size(50, 50);
             this.btnFive.TabIndex = 8;
@@ -161,7 +161,7 @@
             // 
             this.btnFour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
             this.btnFour.ForeColor = System.Drawing.Color.White;
-            this.btnFour.Location = new System.Drawing.Point(13, 176);
+            this.btnFour.Location = new System.Drawing.Point(13, 178);
             this.btnFour.Name = "btnFour";
             this.btnFour.Size = new System.Drawing.Size(50, 50);
             this.btnFour.TabIndex = 7;
@@ -173,7 +173,7 @@
             // 
             this.btnDZero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
             this.btnDZero.ForeColor = System.Drawing.Color.White;
-            this.btnDZero.Location = new System.Drawing.Point(177, 232);
+            this.btnDZero.Location = new System.Drawing.Point(177, 234);
             this.btnDZero.Name = "btnDZero";
             this.btnDZero.Size = new System.Drawing.Size(50, 50);
             this.btnDZero.TabIndex = 14;
@@ -185,7 +185,7 @@
             // 
             this.btnThree.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
             this.btnThree.ForeColor = System.Drawing.Color.White;
-            this.btnThree.Location = new System.Drawing.Point(122, 232);
+            this.btnThree.Location = new System.Drawing.Point(122, 234);
             this.btnThree.Name = "btnThree";
             this.btnThree.Size = new System.Drawing.Size(50, 50);
             this.btnThree.TabIndex = 13;
@@ -197,7 +197,7 @@
             // 
             this.btnTwo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
             this.btnTwo.ForeColor = System.Drawing.Color.White;
-            this.btnTwo.Location = new System.Drawing.Point(67, 232);
+            this.btnTwo.Location = new System.Drawing.Point(67, 234);
             this.btnTwo.Name = "btnTwo";
             this.btnTwo.Size = new System.Drawing.Size(50, 50);
             this.btnTwo.TabIndex = 12;
@@ -209,7 +209,7 @@
             // 
             this.btnOne.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
             this.btnOne.ForeColor = System.Drawing.Color.White;
-            this.btnOne.Location = new System.Drawing.Point(12, 232);
+            this.btnOne.Location = new System.Drawing.Point(12, 234);
             this.btnOne.Name = "btnOne";
             this.btnOne.Size = new System.Drawing.Size(50, 50);
             this.btnOne.TabIndex = 11;
@@ -221,7 +221,7 @@
             // 
             this.btnEnter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
             this.btnEnter.ForeColor = System.Drawing.Color.White;
-            this.btnEnter.Location = new System.Drawing.Point(12, 286);
+            this.btnEnter.Location = new System.Drawing.Point(12, 287);
             this.btnEnter.Name = "btnEnter";
             this.btnEnter.Size = new System.Drawing.Size(215, 50);
             this.btnEnter.TabIndex = 15;
@@ -231,7 +231,7 @@
             // 
             // Settle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(239, 344);
             this.Controls.Add(this.btnEnter);
@@ -251,20 +251,19 @@
             this.Controls.Add(this.txtCash);
             this.Controls.Add(this.txtSale);
             this.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Settle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settle Payment";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Settle_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtSale;
         private System.Windows.Forms.TextBox txtCash;
         private System.Windows.Forms.TextBox txtChange;
         private System.Windows.Forms.Button btnSeven;
@@ -280,5 +279,6 @@
         private System.Windows.Forms.Button btnTwo;
         private System.Windows.Forms.Button btnOne;
         private System.Windows.Forms.Button btnEnter;
+        public System.Windows.Forms.TextBox txtSale;
     }
 }

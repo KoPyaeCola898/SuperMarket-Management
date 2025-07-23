@@ -163,6 +163,7 @@
             // btnClear
             // 
             this.btnClear.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClear.Enabled = false;
             this.btnClear.FlatAppearance.BorderSize = 0;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.ForeColor = System.Drawing.Color.White;
@@ -180,6 +181,7 @@
             // btnSettle
             // 
             this.btnSettle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSettle.Enabled = false;
             this.btnSettle.FlatAppearance.BorderSize = 0;
             this.btnSettle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettle.ForeColor = System.Drawing.Color.White;
@@ -197,6 +199,7 @@
             // btnDiscount
             // 
             this.btnDiscount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDiscount.Enabled = false;
             this.btnDiscount.FlatAppearance.BorderSize = 0;
             this.btnDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDiscount.ForeColor = System.Drawing.Color.White;
@@ -525,6 +528,7 @@
             this.dgvCash.RowTemplate.Height = 28;
             this.dgvCash.Size = new System.Drawing.Size(720, 611);
             this.dgvCash.TabIndex = 4;
+            this.dgvCash.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCash_CellContentClick);
             this.dgvCash.SelectionChanged += new System.EventHandler(this.dgvCash_SelectionChanged);
             // 
             // Column1
@@ -684,7 +688,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox picClose;
         private System.Windows.Forms.Panel panelSlide;
-        private System.Windows.Forms.DataGridView dgvCash;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -711,5 +714,6 @@
         public System.Windows.Forms.Label lblTransNo;
         private System.Windows.Forms.TextBox txtQty;
         public System.Windows.Forms.TextBox txtBarCode;
+        public System.Windows.Forms.DataGridView dgvCash;
     }
 }

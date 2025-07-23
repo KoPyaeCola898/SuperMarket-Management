@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SMMS
 {
@@ -15,7 +16,7 @@ namespace SMMS
         private string con;
         public string myConnection()
         {
-            con = @"Data Source=DESKTOP-HU84IA2;Initial Catalog=DBMarket;Integrated Security=True;Encrypt=False";
+            con = @"Data Source=DESKTOP-VQLQM22;Initial Catalog=DBMarket;Integrated Security=True;Encrypt=False";
             return con;
         }
 
@@ -27,6 +28,22 @@ namespace SMMS
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
+        }
+
+        public void ExecuteQuery(String sql)
+        {
+            try
+            {
+                cn.ConnectionString = myConnection();
+                cn.Open();
+                cmd = new SqlCommand(sql, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
