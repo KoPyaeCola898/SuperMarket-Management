@@ -36,6 +36,7 @@
             this.btnUser = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnSaleHistory = new System.Windows.Forms.Button();
+            this.btnInStock = new System.Windows.Forms.Button();
             this.btnCategory = new System.Windows.Forms.Button();
             this.btnProductList = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.panelTitle = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.btnInStock = new System.Windows.Forms.Button();
             this.panelSlide.SuspendLayout();
             this.panelSubSetting.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -58,6 +58,7 @@
             // panelSlide
             // 
             this.panelSlide.AutoScroll = true;
+            this.panelSlide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
             this.panelSlide.Controls.Add(this.btnLogout);
             this.panelSlide.Controls.Add(this.panelSubSetting);
             this.panelSlide.Controls.Add(this.btnSetting);
@@ -164,6 +165,22 @@
             this.btnSaleHistory.UseVisualStyleBackColor = true;
             this.btnSaleHistory.Click += new System.EventHandler(this.btnSaleHistory_Click);
             // 
+            // btnInStock
+            // 
+            this.btnInStock.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInStock.FlatAppearance.BorderSize = 0;
+            this.btnInStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInStock.ForeColor = System.Drawing.Color.White;
+            this.btnInStock.Location = new System.Drawing.Point(0, 305);
+            this.btnInStock.Name = "btnInStock";
+            this.btnInStock.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnInStock.Size = new System.Drawing.Size(200, 45);
+            this.btnInStock.TabIndex = 7;
+            this.btnInStock.Text = "In Stock";
+            this.btnInStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInStock.UseVisualStyleBackColor = true;
+            this.btnInStock.Click += new System.EventHandler(this.btnInStock_Click);
+            // 
             // btnCategory
             // 
             this.btnCategory.Dock = System.Windows.Forms.DockStyle.Top;
@@ -266,6 +283,7 @@
             // 
             // panelTitle
             // 
+            this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
             this.panelTitle.Controls.Add(this.lblTitle);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(200, 0);
@@ -294,22 +312,6 @@
             this.panelMain.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.panelMain.Size = new System.Drawing.Size(978, 604);
             this.panelMain.TabIndex = 2;
-            // 
-            // btnInStock
-            // 
-            this.btnInStock.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInStock.FlatAppearance.BorderSize = 0;
-            this.btnInStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInStock.ForeColor = System.Drawing.Color.White;
-            this.btnInStock.Location = new System.Drawing.Point(0, 305);
-            this.btnInStock.Name = "btnInStock";
-            this.btnInStock.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnInStock.Size = new System.Drawing.Size(200, 45);
-            this.btnInStock.TabIndex = 7;
-            this.btnInStock.Text = "In Stock";
-            this.btnInStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInStock.UseVisualStyleBackColor = true;
-            this.btnInStock.Click += new System.EventHandler(this.btnInStock_Click);
             // 
             // MainForm
             // 

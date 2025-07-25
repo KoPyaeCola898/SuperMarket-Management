@@ -264,7 +264,7 @@
             this.lblUsername.ForeColor = System.Drawing.Color.White;
             this.lblUsername.Location = new System.Drawing.Point(42, 134);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(83, 20);
+            this.lblUsername.Size = new System.Drawing.Size(121, 25);
             this.lblUsername.TabIndex = 4;
             this.lblUsername.Text = "Username";
             // 
@@ -334,7 +334,7 @@
             this.lblName.ForeColor = System.Drawing.Color.White;
             this.lblName.Location = new System.Drawing.Point(63, 12);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(122, 20);
+            this.lblName.Size = new System.Drawing.Size(181, 25);
             this.lblName.TabIndex = 5;
             this.lblName.Text = "Name and Role";
             // 
@@ -363,7 +363,7 @@
             // 
             this.txtQty.Location = new System.Drawing.Point(171, 261);
             this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(37, 25);
+            this.txtQty.Size = new System.Drawing.Size(37, 34);
             this.txtQty.TabIndex = 16;
             this.txtQty.Text = "1";
             this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -407,7 +407,7 @@
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(6, 406);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 20);
+            this.label8.Size = new System.Drawing.Size(121, 25);
             this.label8.TabIndex = 8;
             this.label8.Text = "Discount : ";
             // 
@@ -417,7 +417,7 @@
             this.label6.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(6, 369);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 20);
+            this.label6.Size = new System.Drawing.Size(145, 25);
             this.label6.TabIndex = 7;
             this.label6.Text = "Sales Total : ";
             // 
@@ -425,7 +425,7 @@
             // 
             this.txtBarCode.Location = new System.Drawing.Point(11, 261);
             this.txtBarCode.Name = "txtBarCode";
-            this.txtBarCode.Size = new System.Drawing.Size(154, 25);
+            this.txtBarCode.Size = new System.Drawing.Size(154, 34);
             this.txtBarCode.TabIndex = 6;
             this.txtBarCode.TextChanged += new System.EventHandler(this.txtBarCode_TextChanged);
             // 
@@ -435,7 +435,7 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(8, 230);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 20);
+            this.label7.Size = new System.Drawing.Size(108, 25);
             this.label7.TabIndex = 5;
             this.label7.Text = "BarCode";
             // 
@@ -445,7 +445,7 @@
             this.lblDate.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.Location = new System.Drawing.Point(8, 194);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(57, 20);
+            this.lblDate.Size = new System.Drawing.Size(84, 25);
             this.lblDate.TabIndex = 4;
             this.lblDate.Text = "000000";
             // 
@@ -455,7 +455,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(8, 158);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 20);
+            this.label5.Size = new System.Drawing.Size(65, 25);
             this.label5.TabIndex = 3;
             this.label5.Text = "Date";
             // 
@@ -465,7 +465,7 @@
             this.lblTransNo.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTransNo.Location = new System.Drawing.Point(6, 122);
             this.lblTransNo.Name = "lblTransNo";
-            this.lblTransNo.Size = new System.Drawing.Size(113, 20);
+            this.lblTransNo.Size = new System.Drawing.Size(168, 25);
             this.lblTransNo.TabIndex = 2;
             this.lblTransNo.Text = "0000000000000";
             // 
@@ -475,7 +475,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(6, 86);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 20);
+            this.label2.Size = new System.Drawing.Size(173, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Transacton No.";
             // 
@@ -537,7 +537,7 @@
             this.Column1.HeaderText = "No";
             this.Column1.MinimumWidth = 8;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 53;
+            this.Column1.Width = 76;
             // 
             // Column8
             // 
@@ -545,7 +545,7 @@
             this.Column8.HeaderText = "id";
             this.Column8.MinimumWidth = 8;
             this.Column8.Name = "Column8";
-            this.Column8.Width = 45;
+            this.Column8.Width = 65;
             // 
             // Column2
             // 
@@ -554,7 +554,7 @@
             this.Column2.MinimumWidth = 8;
             this.Column2.Name = "Column2";
             this.Column2.Visible = false;
-            this.Column2.Width = 138;
+            this.Column2.Width = 199;
             // 
             // Column4
             // 
@@ -571,7 +571,7 @@
             this.Column6.HeaderText = "Price";
             this.Column6.MinimumWidth = 8;
             this.Column6.Name = "Column6";
-            this.Column6.Width = 69;
+            this.Column6.Width = 98;
             // 
             // Column3
             // 
@@ -581,7 +581,7 @@
             this.Column3.HeaderText = "Qty";
             this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
-            this.Column3.Width = 58;
+            this.Column3.Width = 86;
             // 
             // Column5
             // 
@@ -591,7 +591,7 @@
             this.Column5.HeaderText = "Discount";
             this.Column5.MinimumWidth = 8;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 95;
+            this.Column5.Width = 137;
             // 
             // Column7
             // 
@@ -601,7 +601,6 @@
             this.Column7.HeaderText = "Total";
             this.Column7.MinimumWidth = 8;
             this.Column7.Name = "Column7";
-            this.Column7.Width = 65;
             // 
             // colAdd
             // 
@@ -637,7 +636,7 @@
             // 
             // Cashier
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1148, 661);

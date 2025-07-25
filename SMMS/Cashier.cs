@@ -112,7 +112,7 @@ namespace SMMS
         public void LoadCart()
         {
             try
-            {
+            { 
                 Boolean hascart = false;
                 int i = 0;
                 double total = 0;
@@ -147,7 +147,7 @@ namespace SMMS
         public void GetCartTotal()
         {
             double discount = double.Parse(lblDiscount.Text);
-            double sales = double.Parse(lblSaleTotal.Text) - discount;
+            double sales = double.Parse(lblSaleTotal.Text); // - discount removed (Date 7/24/2025)
 
             lblDisplayTotal.Text = sales.ToString("#,##0.00"); // Display the total after discount
         }
@@ -303,10 +303,10 @@ namespace SMMS
             
             if (colName == "Delete")
             {
-                if (MessageBox.Show("Remove this item", "Remove item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) ;
+                if (MessageBox.Show("Remove this item", "Remove item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    dbcon.ExecuteQuery("Delete from tbCart where id like'" + dgvCash.Rows[e.RowIndex].Cells[1].Value.ToString() + "'");
-                    MessageBox.Show("Items has been successfully remove", "Remove item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dbcon.ExecuteQuery("Delete from tbCart where id LIKE'" + dgvCash.Rows[e.RowIndex].Cells[1].Value.ToString() + "'");
+                    MessageBox.Show("Items has been successfully removed.", "Remove item", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadCart();
                 }
             }
@@ -314,9 +314,10 @@ namespace SMMS
             {
                 int i = 0;
                 cn.Open();
-                cmd = new SqlCommand("SELECT SUM(qty) as qty FROM tbProduct WHERE pcode like '" + dgvCash.Rows[e.RowIndex].Cells[2].Value.ToString() + "' GROUP BY pcode", cn);
+                cmd = new SqlCommand("SELECT SUM(qty) as qty FROM tbProduct WHERE pcode LIKE '" + dgvCash.Rows[e.RowIndex].Cells[2].Value.ToString() + "' GROUP BY pcode", cn);
                 i = int.Parse(cmd.ExecuteScalar().ToString());
                 cn.Close();
+
                 if (int.Parse(dgvCash.Rows[e.RowIndex].Cells[5].Value.ToString()) < i)
                 {
                     dbcon.ExecuteQuery("UPDATE tbCart SET qty = qty + " + int.Parse(txtQty.Text) + "WHERE transno LIKE '" + lblTransNo.Text + "' AND pcode LIKE '" + dgvCash.Rows[e.RowIndex].Cells[2].Value.ToString() + "'");
@@ -328,21 +329,24 @@ namespace SMMS
                     return;
                 }
             }
-            else if (colName=="ColReduce")
+            else if (colName == "ColReduce")
             {
-                int i = 0;
-                cn.Open();
-                cmd = new SqlCommand("SELECT SUM(qty) as qty FROM tbCart WHERE pcode like '" + dgvCash.Rows[e.RowIndex].Cells[2].Value.ToString() + "' GROUP BY pcode", cn);
-                i = int.Parse(cmd.ExecuteScalar().ToString());
-                cn.Close();
-                if(i>1)
+                //int i = 0;
+                //cn.Open();
+                //cmd = new SqlCommand("SELECT SUM(qty) as qty FROM tbCart WHERE pcode LIKE '" + dgvCash.Rows[e.RowIndex].Cells[2].Value.ToString() + "' GROUP BY pcode", cn);
+                //i = int.Parse(cmd.ExecuteScalar().ToString());
+                //cn.Close();
+
+                int currentQty = int.Parse(dgvCash.Rows[e.RowIndex].Cells[5].Value.ToString());
+
+                if (currentQty > 1)
                 {
-                    dbcon.ExecuteQuery("UPDATE tbCart SET qty = qty - " + int.Parse(txtQty.Text) + "WHERE transno LIKE '" + lblTransNo.Text + "' AND pcode LIKE '" + dgvCash.Rows[e.RowIndex].Cells[2].Value.ToString() + "'");
+                    dbcon.ExecuteQuery("UPDATE tbCart SET qty = qty - 1 WHERE transno LIKE '" + lblTransNo.Text + "' AND pcode LIKE '" + dgvCash.Rows[e.RowIndex].Cells[2].Value.ToString() + "'");
                     LoadCart();
                 }
                 else 
                 {
-                    MessageBox.Show("Remaining qty on hand is " + i + "!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Cannot reduce qty below 1!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
