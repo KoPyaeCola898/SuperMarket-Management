@@ -46,6 +46,7 @@ namespace SMMS
             panelSlide.Height = button.Height;
             panelSlide.Top = button.Top;
         }
+
         #region buttons
         private void btnNTran_Click(object sender, EventArgs e)
         {
@@ -87,7 +88,7 @@ namespace SMMS
                 cmd = new SqlCommand("Delete from tbCart where transno like'" + lblTransNo.Text + "'", cn);
                 cmd.ExecuteNonQuery();
                 cn.Close();
-                MessageBox.Show("All item has been successfully remove", "Remove item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("All item has been successfully removed", "Remove item", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadCart();
             }
 
@@ -108,7 +109,7 @@ namespace SMMS
             slide(btnLogout); // Slide the panel to the Logout button
             if (dgvCash.Rows.Count > 0)
             {
-                MessageBox.Show("Unable to logout.Please cancel the transaction.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Unable to logout. Please cancel the transaction.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if (MessageBox.Show("Logout Application?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

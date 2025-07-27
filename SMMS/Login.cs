@@ -68,7 +68,7 @@ namespace SMMS
                 {
                     if (!_isactive)
                     {
-                        MessageBox.Show("Account is inactive.Unable to Login", "Inactive Account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Account is inactive. Unable to Login", "Inactive Account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     if (_role == "Cashier")
@@ -79,7 +79,7 @@ namespace SMMS
                         this.Hide();
                         Cashier cashier = new Cashier();
                         cashier.lblUsername.Text = _username;
-                        cashier.lblName.Text = _name + "!" + _role;
+                        cashier.lblName.Text = _name + " | " + _role;
                         cashier.ShowDialog();
                     }
                     else
@@ -96,7 +96,7 @@ namespace SMMS
                 }
                 else 
                 {
-                    MessageBox.Show("Invalid username and password!", "ACCESS DENIED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Invalid username or password!", "ACCESS DENIED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }

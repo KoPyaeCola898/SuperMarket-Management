@@ -247,7 +247,7 @@
             this.lblName.ForeColor = System.Drawing.Color.White;
             this.lblName.Location = new System.Drawing.Point(3, 86);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(25, 20);
+            this.lblName.Size = new System.Drawing.Size(37, 27);
             this.lblName.TabIndex = 3;
             this.lblName.Text = "Ln";
             this.lblName.Visible = false;
@@ -256,16 +256,16 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.ForeColor = System.Drawing.Color.White;
-            this.lblUsername.Location = new System.Drawing.Point(34, 106);
+            this.lblUsername.Location = new System.Drawing.Point(46, 106);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(83, 20);
+            this.lblUsername.Size = new System.Drawing.Size(126, 27);
             this.lblUsername.TabIndex = 2;
             this.lblUsername.Text = "Username";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(54, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(51, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 75);
             this.pictureBox1.TabIndex = 0;
@@ -275,9 +275,9 @@
             // 
             this.lblRole.AutoSize = true;
             this.lblRole.ForeColor = System.Drawing.Color.White;
-            this.lblRole.Location = new System.Drawing.Point(21, 136);
+            this.lblRole.Location = new System.Drawing.Point(31, 136);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(101, 20);
+            this.lblRole.Size = new System.Drawing.Size(157, 27);
             this.lblRole.TabIndex = 1;
             this.lblRole.Text = "Adminstrator";
             // 
@@ -315,7 +315,7 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
             this.ClientSize = new System.Drawing.Size(1184, 661);
