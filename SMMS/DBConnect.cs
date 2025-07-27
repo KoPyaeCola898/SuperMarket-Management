@@ -16,7 +16,7 @@ namespace SMMS
         private string con;
         public string myConnection()
         {
-            con = @"Data Source=DESKTOP-HU84IA2;Initial Catalog=DBMarket;Integrated Security=True;Encrypt=False";
+            con = @"Data Source=DESKTOP-VQLQM22;Initial Catalog=DBMarket;Integrated Security=True;Encrypt=False";
             return con;
         }
 

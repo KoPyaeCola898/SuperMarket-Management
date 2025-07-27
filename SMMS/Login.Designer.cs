@@ -85,7 +85,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(68, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(378, 51);
+            this.label1.Size = new System.Drawing.Size(260, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "G5 Super Market";
             // 
@@ -139,7 +139,7 @@
             this.label2.Font = new System.Drawing.Font("Century Schoolbook", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(377, 291);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(321, 37);
+            this.label2.Size = new System.Drawing.Size(212, 25);
             this.label2.TabIndex = 11;
             this.label2.Text = "Please Login First";
             // 
@@ -162,9 +162,8 @@
             this.txtPass.Lines = new string[0];
             this.txtPass.Location = new System.Drawing.Point(331, 394);
             this.txtPass.MaxLength = 32767;
-            this.txtPass.Multiline = true;
             this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '\0';
+            this.txtPass.PasswordChar = '●';
             this.txtPass.PromptText = "Password";
             this.txtPass.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPass.SelectedText = "";
@@ -174,9 +173,11 @@
             this.txtPass.Size = new System.Drawing.Size(290, 30);
             this.txtPass.TabIndex = 12;
             this.txtPass.UseSelectable = true;
+            this.txtPass.UseSystemPasswordChar = true;
             this.txtPass.WaterMark = "Password";
             this.txtPass.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPass.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
             // btnLogin
             // 
@@ -208,19 +209,20 @@
             this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(789, 630);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(243, 25);
+            this.label3.Size = new System.Drawing.Size(166, 20);
             this.label3.TabIndex = 16;
             this.label3.Text = "@Copy Right Group-5";
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(950, 650);

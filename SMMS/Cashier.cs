@@ -106,6 +106,17 @@ namespace SMMS
         private void btnLogout_Click(object sender, EventArgs e)
         {
             slide(btnLogout); // Slide the panel to the Logout button
+            if (dgvCash.Rows.Count > 0)
+            {
+                MessageBox.Show("Unable to logout.Please cancel the transaction.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (MessageBox.Show("Logout Application?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Hide();
+                Login login = new Login();
+                login.ShowDialog();
+            }
         }
         #endregion buttons
 

@@ -71,7 +71,7 @@
             this.panelSlide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSlide.Location = new System.Drawing.Point(0, 0);
             this.panelSlide.Name = "panelSlide";
-            this.panelSlide.Size = new System.Drawing.Size(200, 644);
+            this.panelSlide.Size = new System.Drawing.Size(200, 661);
             this.panelSlide.TabIndex = 0;
             // 
             // btnLogout
@@ -80,7 +80,7 @@
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(0, 599);
+            this.btnLogout.Location = new System.Drawing.Point(0, 616);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnLogout.Size = new System.Drawing.Size(200, 45);
@@ -247,7 +247,7 @@
             this.lblName.ForeColor = System.Drawing.Color.White;
             this.lblName.Location = new System.Drawing.Point(3, 86);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(37, 27);
+            this.lblName.Size = new System.Drawing.Size(25, 20);
             this.lblName.TabIndex = 3;
             this.lblName.Text = "Ln";
             this.lblName.Visible = false;
@@ -258,7 +258,7 @@
             this.lblUsername.ForeColor = System.Drawing.Color.White;
             this.lblUsername.Location = new System.Drawing.Point(34, 106);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(126, 27);
+            this.lblUsername.Size = new System.Drawing.Size(83, 20);
             this.lblUsername.TabIndex = 2;
             this.lblUsername.Text = "Username";
             // 
@@ -277,7 +277,7 @@
             this.lblRole.ForeColor = System.Drawing.Color.White;
             this.lblRole.Location = new System.Drawing.Point(21, 136);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(157, 27);
+            this.lblRole.Size = new System.Drawing.Size(101, 20);
             this.lblRole.TabIndex = 1;
             this.lblRole.Text = "Adminstrator";
             // 
@@ -288,7 +288,7 @@
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(200, 0);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(978, 40);
+            this.panelTitle.Size = new System.Drawing.Size(984, 40);
             this.panelTitle.TabIndex = 1;
             // 
             // lblTitle
@@ -310,15 +310,15 @@
             this.panelMain.Location = new System.Drawing.Point(200, 40);
             this.panelMain.Name = "panelMain";
             this.panelMain.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.panelMain.Size = new System.Drawing.Size(978, 604);
+            this.panelMain.Size = new System.Drawing.Size(984, 621);
             this.panelMain.TabIndex = 2;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            this.ClientSize = new System.Drawing.Size(1178, 644);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panelSlide);
@@ -354,12 +354,12 @@
         private System.Windows.Forms.Button btnUser;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnStore;
-        private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button btnInStock;
+        public System.Windows.Forms.Label lblUsername;
+        public System.Windows.Forms.Label lblRole;
+        public System.Windows.Forms.Label lblName;
     }
 }
 

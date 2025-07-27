@@ -108,6 +108,13 @@ namespace SMMS
         private void btnLogout_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+
+            if (MessageBox.Show("Logout Application?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Hide();
+                Login login = new Login();
+                login.ShowDialog();
+            }
         }
 
         private void btnInStock_Click(object sender, EventArgs e)
